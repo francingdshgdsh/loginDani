@@ -7,93 +7,140 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/signin.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 
-    <style>
-   
-    </style>
-    <title>Login con Node + JWT + MySQL</title>
+
+    <title>Registro</title>
   </head>
   <body>
-    
-    <main class="form-signin text-center shadow-lg p-3 mb-5">
-
+    <main class="form-signin text-center shadow-lg p-3 mb-5 mx-auto">
         <div class="container">
+            <h1>Registrarse</h1>
+        </div>
+    
+        <form action="/register" class="formRegister" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="flex-column">
+                        <label>Nombre </label>
+                    </div>
+                    <div class="inputForm">
+                        <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="10" r="6"/><path d="M4 28c0-6 5-10 12-10s12 4 12 10"/></svg>
+                        <input id="name" name="name" type="text" class="input form-control" placeholder="Nombre" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="flex-column">
+                        <label>Apellidos </label>
+                    </div>
+                    <div class="inputForm">
+                        <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="10" r="6"/><path d="M4 28c0-6 5-10 12-10s12 4 12 10"/></svg>
+                        <input id="lastname" name="lastname" type="text" class="input form-control" placeholder="Apellidos" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="flex-column">
+                        <label>Email </label>
+                    </div>
+                    <div class="inputForm">
+                      <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 32 32"
+                      height="20"
+                    >
+                      <g data-name="Layer 3" id="Layer_3">
+                        <path
+                          d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"
+                        ></path>
+                      </g>
+                    </svg>
+                        <input id="email" name="email" type="email" class="input form-control" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="flex-column">
+                        <label>Dirección </label>
+                    </div>
+                    <div class="inputForm">
+                        <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C9.4 2 4 7.4 4 14c0 5.6 5.4 10.6 11 16 5.6-5.4 11-10.4 11-16 0-6.6-5.4-12-10-12z"/></svg>
+                        <input id="address" name="address" type="text" class="input form-control" placeholder="Dirección" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="flex-column">
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="inputForm">
+                      <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="-64 0 512 512"
+                      height="20"
+                    >
+                      <path
+                        d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"
+                      ></path>
+                      <path
+                        d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
+                      ></path>
+                    </svg>
+                        <input type="password" class="input form-control" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="flex-column">
+                        <label>Confirmar Contraseña</label>
+                    </div>
+                    <div class="inputForm">
+                      <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="-64 0 512 512"
+                      height="20"
+                    >
+                      <path
+                        d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"
+                      ></path>
+                      <path
+                        d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
+                      ></path>
+                    </svg>
+                        <input type="password" class="input form-control" id="confirm_password" name="confirm_password" placeholder="Confirmar Contraseña" required>
+                    </div>
+                </div>
+            </div>
+
             <p style="text-align: center;">
-                <h1>Registrarse</h1>
-            </p>
-        </div>
-    <form  action="/register" class="form" method="POST">
-        <div class="flex-column">
-          <label>Nombre </label>
-        </div>
-        <div class="inputForm">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            viewBox="0 0 32 32"
-            height="20"
-          >
-            <g data-name="Layer 3" id="Layer_3">
-              <path
-                d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"
-              ></path>
-            </g>
-          </svg>
-          <input id="name" name="name" type="text" class="input form-control" placeholder="User">
-        </div>
-
-        <div class="flex-column">
-            <label>Username </label>
-          </div>
-          <div class="inputForm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              viewBox="0 0 32 32"
-              height="20"
-            >
-              <g data-name="Layer 3" id="Layer_3">
-                <path
-                  d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"
-                ></path>
-              </g>
-            </svg>
-            <input id="user" name="user" type="text" class="input form-control" placeholder="Username">
-          </div>
-      
-        <div class="flex-column">
-          <label>Password</label>
-        </div>
-        <div class="inputForm">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            viewBox="-64 0 512 512"
-            height="20"
-          >
-            <path
-              d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"
-            ></path>
-            <path
-              d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
-            ></path>
-          </svg>
-          <input type="password" class="input form-control" id="pass" name="pass"  placeholder="Password">
-        </div>
-      
-        <div class="flex-row">
-          
-        </div>
-        <button class="button-submit" button type="submit">Registrar</button>
-
-        <button class="button-submit" type="submit"><a href="/">Cancelar</a></button>
-    
-        
-    
-      </form>
-
- 
+            <button class="button-submitRegistro" type="submit">Registrar</button>
+            <button class="button-submitRegistro" type="submit"><a href="/">Cancelar</a></button>
+          </p>
+        </form>
+    </main>
     
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert !== "undefined") { %>
+        <script>
+            Swal.fire({
+                title: "<%= alertTitle %>",
+                text: "<%= alertMessage %>",
+                icon: "<%= alertIcon %>",
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            }).then(() => {
+                window.location = "/<%= ruta %>";
+            });
+        </script>
+    <% } %>
+    
+
   </body>
 </html>
